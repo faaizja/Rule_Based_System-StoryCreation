@@ -17,14 +17,14 @@ story_grammar = {
     "decision": ["embrace their newfound power", "leave behind everything they knew", "rebuild what was lost", "walk the path of redemption", "pass on their legacy", "safeguard the balance of worlds", "fade into legend"]
 }
 
-def generate(symbol, grammar):
+def generate(idea, grammar):
     """
     Recursively generate a story based on the given grammar.
     """
-    if symbol in grammar:
-        production = random.choice(grammar[symbol])
+    if idea in grammar:
+        production = random.choice(grammar[idea])
         return " ".join(generate(sym, grammar) for sym in production)
-    return symbol
+    return idea
 
 # Markov Chain Model for Story Generation
 class MarkovChain:
